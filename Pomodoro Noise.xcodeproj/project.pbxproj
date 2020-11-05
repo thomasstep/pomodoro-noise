@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10C231EE2554C81700C5E016 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231ED2554C81700C5E016 /* Tests_iOS.swift */; };
+		10C231F92554C81700C5E016 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231F82554C81700C5E016 /* Tests_macOS.swift */; };
+		10C231FB2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */; };
+		10C231FC2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */; };
+		10C231FD2554C81700C5E016 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D32554C81600C5E016 /* ContentView.swift */; };
+		10C231FE2554C81700C5E016 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D32554C81600C5E016 /* ContentView.swift */; };
+		10C231FF2554C81700C5E016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C231D42554C81700C5E016 /* Assets.xcassets */; };
+		10C232002554C81700C5E016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C231D42554C81700C5E016 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10C231EA2554C81700C5E016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10C231CD2554C81500C5E016 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C231D82554C81700C5E016;
+			remoteInfo = "Pomodoro Noise (iOS)";
+		};
+		10C231F52554C81700C5E016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10C231CD2554C81500C5E016 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C231E02554C81700C5E016;
+			remoteInfo = "Pomodoro Noise (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro_NoiseApp.swift; sourceTree = "<group>"; };
+		10C231D32554C81600C5E016 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		10C231D42554C81700C5E016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10C231D92554C81700C5E016 /* Pomodoro Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Noise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C231DC2554C81700C5E016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C231E12554C81700C5E016 /* Pomodoro Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Noise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C231E32554C81700C5E016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C231E42554C81700C5E016 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		10C231E92554C81700C5E016 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C231ED2554C81700C5E016 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		10C231EF2554C81700C5E016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C231F42554C81700C5E016 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C231F82554C81700C5E016 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		10C231FA2554C81700C5E016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10C231D62554C81700C5E016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231DE2554C81700C5E016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231E62554C81700C5E016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231F12554C81700C5E016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10C231CC2554C81500C5E016 = {
+			isa = PBXGroup;
+			children = (
+				10C231D12554C81600C5E016 /* Shared */,
+				10C231DB2554C81700C5E016 /* iOS */,
+				10C231E22554C81700C5E016 /* macOS */,
+				10C231EC2554C81700C5E016 /* Tests iOS */,
+				10C231F72554C81700C5E016 /* Tests macOS */,
+				10C231DA2554C81700C5E016 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10C231D12554C81600C5E016 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */,
+				10C231D32554C81600C5E016 /* ContentView.swift */,
+				10C231D42554C81700C5E016 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		10C231DA2554C81700C5E016 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10C231D92554C81700C5E016 /* Pomodoro Noise.app */,
+				10C231E12554C81700C5E016 /* Pomodoro Noise.app */,
+				10C231E92554C81700C5E016 /* Tests iOS.xctest */,
+				10C231F42554C81700C5E016 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10C231DB2554C81700C5E016 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				10C231DC2554C81700C5E016 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		10C231E22554C81700C5E016 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				10C231E32554C81700C5E016 /* Info.plist */,
+				10C231E42554C81700C5E016 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		10C231EC2554C81700C5E016 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				10C231ED2554C81700C5E016 /* Tests_iOS.swift */,
+				10C231EF2554C81700C5E016 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		10C231F72554C81700C5E016 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				10C231F82554C81700C5E016 /* Tests_macOS.swift */,
+				10C231FA2554C81700C5E016 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10C231D82554C81700C5E016 /* Pomodoro Noise (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C232032554C81700C5E016 /* Build configuration list for PBXNativeTarget "Pomodoro Noise (iOS)" */;
+			buildPhases = (
+				10C231D52554C81700C5E016 /* Sources */,
+				10C231D62554C81700C5E016 /* Frameworks */,
+				10C231D72554C81700C5E016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pomodoro Noise (iOS)";
+			productName = "Pomodoro Noise (iOS)";
+			productReference = 10C231D92554C81700C5E016 /* Pomodoro Noise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10C231E02554C81700C5E016 /* Pomodoro Noise (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C232062554C81700C5E016 /* Build configuration list for PBXNativeTarget "Pomodoro Noise (macOS)" */;
+			buildPhases = (
+				10C231DD2554C81700C5E016 /* Sources */,
+				10C231DE2554C81700C5E016 /* Frameworks */,
+				10C231DF2554C81700C5E016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pomodoro Noise (macOS)";
+			productName = "Pomodoro Noise (macOS)";
+			productReference = 10C231E12554C81700C5E016 /* Pomodoro Noise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10C231E82554C81700C5E016 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C232092554C81700C5E016 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				10C231E52554C81700C5E016 /* Sources */,
+				10C231E62554C81700C5E016 /* Frameworks */,
+				10C231E72554C81700C5E016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10C231EB2554C81700C5E016 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 10C231E92554C81700C5E016 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		10C231F32554C81700C5E016 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C2320C2554C81700C5E016 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				10C231F02554C81700C5E016 /* Sources */,
+				10C231F12554C81700C5E016 /* Frameworks */,
+				10C231F22554C81700C5E016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10C231F62554C81700C5E016 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 10C231F42554C81700C5E016 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10C231CD2554C81500C5E016 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					10C231D82554C81700C5E016 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					10C231E02554C81700C5E016 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					10C231E82554C81700C5E016 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 10C231D82554C81700C5E016;
+					};
+					10C231F32554C81700C5E016 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 10C231E02554C81700C5E016;
+					};
+				};
+			};
+			buildConfigurationList = 10C231D02554C81500C5E016 /* Build configuration list for PBXProject "Pomodoro Noise" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10C231CC2554C81500C5E016;
+			productRefGroup = 10C231DA2554C81700C5E016 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10C231D82554C81700C5E016 /* Pomodoro Noise (iOS) */,
+				10C231E02554C81700C5E016 /* Pomodoro Noise (macOS) */,
+				10C231E82554C81700C5E016 /* Tests iOS */,
+				10C231F32554C81700C5E016 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10C231D72554C81700C5E016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C231FF2554C81700C5E016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231DF2554C81700C5E016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C232002554C81700C5E016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231E72554C81700C5E016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231F22554C81700C5E016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10C231D52554C81700C5E016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C231FD2554C81700C5E016 /* ContentView.swift in Sources */,
+				10C231FB2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231DD2554C81700C5E016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C231FE2554C81700C5E016 /* ContentView.swift in Sources */,
+				10C231FC2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231E52554C81700C5E016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C231EE2554C81700C5E016 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C231F02554C81700C5E016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C231F92554C81700C5E016 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10C231EB2554C81700C5E016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10C231D82554C81700C5E016 /* Pomodoro Noise (iOS) */;
+			targetProxy = 10C231EA2554C81700C5E016 /* PBXContainerItemProxy */;
+		};
+		10C231F62554C81700C5E016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10C231E02554C81700C5E016 /* Pomodoro Noise (macOS) */;
+			targetProxy = 10C231F52554C81700C5E016 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10C232012554C81700C5E016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10C232022554C81700C5E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		10C232042554C81700C5E016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Pomodoro-Noise";
+				PRODUCT_NAME = "Pomodoro Noise";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10C232052554C81700C5E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Pomodoro-Noise";
+				PRODUCT_NAME = "Pomodoro Noise";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10C232072554C81700C5E016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Pomodoro-Noise";
+				PRODUCT_NAME = "Pomodoro Noise";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		10C232082554C81700C5E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Pomodoro-Noise";
+				PRODUCT_NAME = "Pomodoro Noise";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		10C2320A2554C81700C5E016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pomodoro Noise (iOS)";
+			};
+			name = Debug;
+		};
+		10C2320B2554C81700C5E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pomodoro Noise (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10C2320D2554C81700C5E016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Pomodoro Noise (macOS)";
+			};
+			name = Debug;
+		};
+		10C2320E2554C81700C5E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomasstep.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Pomodoro Noise (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10C231D02554C81500C5E016 /* Build configuration list for PBXProject "Pomodoro Noise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C232012554C81700C5E016 /* Debug */,
+				10C232022554C81700C5E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C232032554C81700C5E016 /* Build configuration list for PBXNativeTarget "Pomodoro Noise (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C232042554C81700C5E016 /* Debug */,
+				10C232052554C81700C5E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C232062554C81700C5E016 /* Build configuration list for PBXNativeTarget "Pomodoro Noise (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C232072554C81700C5E016 /* Debug */,
+				10C232082554C81700C5E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C232092554C81700C5E016 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C2320A2554C81700C5E016 /* Debug */,
+				10C2320B2554C81700C5E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C2320C2554C81700C5E016 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C2320D2554C81700C5E016 /* Debug */,
+				10C2320E2554C81700C5E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10C231CD2554C81500C5E016 /* Project object */;
+}
