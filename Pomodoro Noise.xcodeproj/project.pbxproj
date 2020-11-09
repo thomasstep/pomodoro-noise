@@ -15,6 +15,8 @@
 		10C231FE2554C81700C5E016 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D32554C81600C5E016 /* ContentView.swift */; };
 		10C231FF2554C81700C5E016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C231D42554C81700C5E016 /* Assets.xcassets */; };
 		10C232002554C81700C5E016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C231D42554C81700C5E016 /* Assets.xcassets */; };
+		10C232182554DA0500C5E016 /* Noises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C232172554DA0500C5E016 /* Noises.swift */; };
+		10C232192554DA0500C5E016 /* Noises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C232172554DA0500C5E016 /* Noises.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		10C231F42554C81700C5E016 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C231F82554C81700C5E016 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		10C231FA2554C81700C5E016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C232172554DA0500C5E016 /* Noises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noises.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 				10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */,
 				10C231D32554C81600C5E016 /* ContentView.swift */,
 				10C231D42554C81700C5E016 /* Assets.xcassets */,
+				10C232172554DA0500C5E016 /* Noises.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -308,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C232182554DA0500C5E016 /* Noises.swift in Sources */,
 				10C231FD2554C81700C5E016 /* ContentView.swift in Sources */,
 				10C231FB2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */,
 			);
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C232192554DA0500C5E016 /* Noises.swift in Sources */,
 				10C231FE2554C81700C5E016 /* ContentView.swift in Sources */,
 				10C231FC2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */,
 			);
