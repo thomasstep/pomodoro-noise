@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
-    @State private var selectedNoise = Noises.white
+    @State private var noisePlayer = NoisePlayer()
+    @State private var selectedNoise = NoiseTypes.brown
     @State private var repeatPomodoro : Bool = true
-    @State private var focusTime : Double = 25
-    @State private var breakTime : Double = 5
-    @State private var longBreakTime : Double = 5
+    @State private var focusTime : Double = 0.1 // 25
+    @State private var breakTime : Double = 0.1 // 5
+    @State private var longBreakTime : Double = 15
     @State private var timer : Timer?
     @State private var timeInSeconds : Int = 1500
     @State private var started : Bool = false
@@ -25,9 +27,9 @@ struct ContentView: View {
                 Text("Pick your noise")
                 // https://developer.apple.com/documentation/swiftui/picker
                 Picker("Noise", selection: $selectedNoise) {
-                    Text("White").tag(Noises.white)
-                    Text("Brown").tag(Noises.brown)
-                    Text("Pink").tag(Noises.pink)
+                    Text("White").tag(NoiseTypes.white)
+                    Text("Brown").tag(NoiseTypes.brown)
+                    Text("Pink").tag(NoiseTypes.pink)
                 }
                 Toggle(isOn: $repeatPomodoro) {
                     Text("Repeat timer?")
@@ -82,23 +84,28 @@ struct ContentView: View {
                 if (focusing) {
                     print("focusing")
                     timeInSeconds = Int(breakTime * 60)
+                    noisePlayer.pauseSound()
                     breaking = true
                     focusing = false
                 } else if (breaking) {
                     print("breaking")
                     timeInSeconds = Int(focusTime * 60)
+                    noisePlayer.resumeSound()
                     focusing = true
                     breaking = false
                 }
             }
             timeInSeconds -= 1
         })
+        print("about to play sound")
+        noisePlayer.playSound(noise: selectedNoise.id)
         focusing = true
         started = true
     }
     
     func stopTimer() -> Void {
         timer?.invalidate()
+        noisePlayer.stopSound()
         started = false
     }
 }
