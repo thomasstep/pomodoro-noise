@@ -100,6 +100,7 @@ struct ContentView: View {
         print("about to play sound")
         noisePlayer.playSound(noise: selectedNoise.id)
         focusing = true
+        breaking = false
         started = true
     }
     

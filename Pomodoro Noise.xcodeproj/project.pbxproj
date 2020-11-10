@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1032BB0C255A148C00D16D82 /* white.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB0B255A148C00D16D82 /* white.mp3 */; };
+		1032BB0D255A148C00D16D82 /* white.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB0B255A148C00D16D82 /* white.mp3 */; };
+		1032BB14255A149900D16D82 /* pink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB12255A149800D16D82 /* pink.mp3 */; };
+		1032BB15255A149900D16D82 /* pink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB12255A149800D16D82 /* pink.mp3 */; };
+		1032BB16255A149900D16D82 /* brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB13255A149800D16D82 /* brown.mp3 */; };
+		1032BB17255A149900D16D82 /* brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1032BB13255A149800D16D82 /* brown.mp3 */; };
 		10C231EE2554C81700C5E016 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231ED2554C81700C5E016 /* Tests_iOS.swift */; };
 		10C231F92554C81700C5E016 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231F82554C81700C5E016 /* Tests_macOS.swift */; };
 		10C231FB2554C81700C5E016 /* Pomodoro_NoiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */; };
@@ -37,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1032BB0B255A148C00D16D82 /* white.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = white.mp3; path = Sounds/white.mp3; sourceTree = "<group>"; };
+		1032BB12255A149800D16D82 /* pink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pink.mp3; path = Sounds/pink.mp3; sourceTree = "<group>"; };
+		1032BB13255A149800D16D82 /* brown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = brown.mp3; path = "/Users/thomasstep/pomodoro-noise/Shared/Sounds/brown.mp3"; sourceTree = "<absolute>"; };
 		10C231D22554C81600C5E016 /* Pomodoro_NoiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro_NoiseApp.swift; sourceTree = "<group>"; };
 		10C231D32554C81600C5E016 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		10C231D42554C81700C5E016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +114,9 @@
 				10C231D32554C81600C5E016 /* ContentView.swift */,
 				10C231D42554C81700C5E016 /* Assets.xcassets */,
 				10C232172554DA0500C5E016 /* Noises.swift */,
+				1032BB13255A149800D16D82 /* brown.mp3 */,
+				1032BB12255A149800D16D82 /* pink.mp3 */,
+				1032BB0B255A148C00D16D82 /* white.mp3 */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -279,7 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1032BB0C255A148C00D16D82 /* white.mp3 in Resources */,
 				10C231FF2554C81700C5E016 /* Assets.xcassets in Resources */,
+				1032BB14255A149900D16D82 /* pink.mp3 in Resources */,
+				1032BB16255A149900D16D82 /* brown.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1032BB0D255A148C00D16D82 /* white.mp3 in Resources */,
 				10C232002554C81700C5E016 /* Assets.xcassets in Resources */,
+				1032BB15255A149900D16D82 /* pink.mp3 in Resources */,
+				1032BB17255A149900D16D82 /* brown.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
