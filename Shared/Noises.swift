@@ -27,10 +27,7 @@ class NoisePlayer {
     func playSound( noise: String ) {
         print("noise")
         print(noise)
-        guard let url = Bundle.main.url(forResource: noise, withExtension: "mp3") else { return }
-        print("play sound")
-        print(noise)
-        
+        guard let url = Bundle.main.url(forResource: noise, withExtension: "mp3") else { return }        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -42,7 +39,6 @@ class NoisePlayer {
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
 
             guard let player = player else { return }
-            print("set player")
 
             // Set infinite repeat until stop is called
             player.numberOfLoops = -1
