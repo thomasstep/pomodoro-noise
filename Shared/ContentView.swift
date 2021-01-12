@@ -23,25 +23,25 @@ struct ContentView: View {
     @State private var breaking : Bool = false
     
     var body: some View {
-        ScrollView {
-            if (started) {
-                VStack {
-                    // Timer and stop botton
-                    let minutes = timeInSeconds / 60 % 60
-                    let seconds = timeInSeconds % 60
-                    let clock = String(format:"%02i:%02i", minutes, seconds)
-                    if (focusing) {
-                        Text("\(clock) focusing")
-                            .padding()
-                    } else if (breaking) {
-                        Text("\(clock) breaking")
-                            .padding()
-                    }
-                    Button("Stop", action: stopTimer)
+        if (started) {
+            VStack {
+                // Timer and stop botton
+                let minutes = timeInSeconds / 60 % 60
+                let seconds = timeInSeconds % 60
+                let clock = String(format:"%02i:%02i", minutes, seconds)
+                if (focusing) {
+                    Text("\(clock) focusing")
+                        .padding()
+                } else if (breaking) {
+                    Text("\(clock) breaking")
                         .padding()
                 }
-                .padding()
-            } else {
+                Button("Stop", action: stopTimer)
+                    .padding()
+            }
+            .padding()
+        } else {
+            ScrollView {
                 // Noise option, timing options and start button
                 VStack {
                     Text("Pick your noise")
@@ -51,20 +51,31 @@ struct ContentView: View {
                         Text("Pink").tag(NoiseTypes.pink)
                     }
                 }
-                VStack {
-                    Text("Pomodoro timer options")
-                    Slider(value: $focusTime, in: 1...60, step: 1)
-                        .padding()
-                    Text("\(focusTime, specifier: "%.0f") minutes on")
+                .padding()
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+                    Group {
+                        Text("Pomodoro timer options")
+                        Divider()
+                    }
 
-                    Slider(value: $breakTime, in: 1...60, step: 1)
-                        .padding()
-                    Text("\(breakTime, specifier: "%.0f") minutes off")
+                    Group {
+                        Slider(value: $focusTime, in: 1...60, step: 1)
+                        Text("\(focusTime, specifier: "%.0f") minutes on")
+                        Divider()
+                    }
 
-                    Slider(value: $longBreakTime, in: 1...60, step: 1)
-                        .padding()
-                    Text("\(longBreakTime, specifier: "%.0f") minutes off every four rounds")
+                    Group {
+                        Slider(value: $breakTime, in: 1...60, step: 1)
+                        Text("\(breakTime, specifier: "%.0f") minutes off")
+                        Divider()
+                    }
+
+                    Group {
+                        Slider(value: $longBreakTime, in: 1...60, step: 1)
+                        Text("\(longBreakTime, specifier: "%.0f") minutes off every four rounds")
+                    }
                 }
+                .padding()
                 VStack {
                     let minutes = Int(focusTime) % 60
                     let seconds = Int(focusTime) * 60 % 60
