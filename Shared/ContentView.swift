@@ -13,13 +13,13 @@ struct ContentView: View {
     @State private var selectedNoise = NoiseTypes.brown
     
     // Amount of time to focus (in minutes)
-    @State private var focusTime : Double = 0.1//25
+    @State private var focusTime : Double = 25
     
     // Amount of time to break (in minutes)
-    @State private var breakTime : Double = 0.2//5
+    @State private var breakTime : Double = 5
     
     // Amount of time to break every 4 rounds (in minutes)
-    @State private var longBreakTime : Double = 0.3//20
+    @State private var longBreakTime : Double = 20
     
     // Amount of short break rounds
     // Used to determine when to have a long break
@@ -51,6 +51,9 @@ struct ContentView: View {
                 let minutes = timeInSeconds / 60 % 60
                 let seconds = timeInSeconds % 60
                 let clock = String(format:"%02i:%02i", minutes, seconds)
+                
+                Text("Round \(pomodoroRounds + 1)")
+                    .padding()
                 if (focusing) {
                     Text("\(clock) focusing")
                         .padding()
@@ -102,6 +105,8 @@ struct ContentView: View {
                         Toggle(isOn: $isLimited) {
                             Text("Limit pomodoro rounds")
                         }
+                        .toggleStyle(SwitchToggleStyle(tint: Color.blue))
+                        
                         if (isLimited) {
                             Slider(value: $desiredPomodoroRounds, in: 1...10, step: 1)
                             Text("\(desiredPomodoroRounds, specifier: "%.0f") rounds")
