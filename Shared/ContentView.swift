@@ -11,13 +11,35 @@ import AVFoundation
 struct ContentView: View {
     @State private var noisePlayer = NoisePlayer()
     @State private var selectedNoise = NoiseTypes.brown
-    @State private var repeatPomodoro : Bool = true
-    @State private var focusTime : Double = 25
-    @State private var breakTime : Double = 5
-    @State private var longBreakTime : Double = 20
-    @State private var pomodoroIteration : Int = 1
+    
+    // Amount of time to focus (in minutes)
+    @State private var focusTime : Double = 0.1//25
+    
+    // Amount of time to break (in minutes)
+    @State private var breakTime : Double = 0.2//5
+    
+    // Amount of time to break every 4 rounds (in minutes)
+    @State private var longBreakTime : Double = 0.3//20
+    
+    // Amount of short break rounds
+    // Used to determine when to have a long break
+    @State private var shortBreakRounds : Int = 0
+    
+    // This holds a timer if it is present
     @State private var timer : Timer?
+    
+    // This holds the timers value
     @State private var timeInSeconds : Int = 1500
+    
+    // This is to determine whether or not pomodoro rounds should be counted
+    @State private var isLimited : Bool = false
+    
+    // This is to hold the amount of rounds desired by user
+    // Similar to a sleep timer
+    @State private var desiredPomodoroRounds : Double = 4
+    
+    // This is to count pomodoro rounds until it reaches desiredPomodoroRounds
+    @State private var pomodoroRounds : Int = 0
     @State private var started : Bool = false
     @State private var focusing : Bool = false
     @State private var breaking : Bool = false
@@ -69,60 +91,87 @@ struct ContentView: View {
                         Text("\(breakTime, specifier: "%.0f") minutes off")
                         Divider()
                     }
-
+                    
                     Group {
                         Slider(value: $longBreakTime, in: 1...60, step: 1)
                         Text("\(longBreakTime, specifier: "%.0f") minutes off every four rounds")
+                        Divider()
                     }
+                    
+                    Group {
+                        Toggle(isOn: $isLimited) {
+                            Text("Limit pomodoro rounds")
+                        }
+                        if (isLimited) {
+                            Slider(value: $desiredPomodoroRounds, in: 1...10, step: 1)
+                            Text("\(desiredPomodoroRounds, specifier: "%.0f") rounds")
+                        }
+                    }
+                    
                 }
                 .padding()
                 VStack {
-                    let minutes = Int(focusTime) % 60
-                    let seconds = Int(focusTime) * 60 % 60
-                    let clock = String(format:"%02i:%02i", minutes, seconds)
-                    Text("\(clock)")
-                        .padding()
                     Button("Start", action: startTimer)
                         .padding()
                 }
             }
         }
     }
-    
+
     func startTimer() -> Void {
         timeInSeconds = Int(focusTime * 60)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {
             timerInBlock in
             if (timeInSeconds <= 0) {
-                if (focusing && pomodoroIteration < 4) {
-                    print("pomodoro interations: \(pomodoroIteration)")
-                    print("focus to break")
+                if (focusing && shortBreakRounds < 3) {
+                    // Reset countdown timer for short break
                     timeInSeconds = Int(breakTime * 60)
+                    
+                    // Transition state to resemble break
                     noisePlayer.pauseSound()
-                    pomodoroIteration += 1
                     focusing = false
                     breaking = true
-                } else if (focusing && pomodoroIteration >= 4) {
-                    print("pomodoro interations: \(pomodoroIteration)")
-                    print("focus to long break")
+                    
+                    // Add to pomodoro iteration for long break
+                    shortBreakRounds += 1
+                } else if (focusing && shortBreakRounds >= 3) {
+                    // Reset countdown timer for long break
                     timeInSeconds = Int(longBreakTime * 60)
+                    
+                    // Transition state to resemble break
                     noisePlayer.pauseSound()
-                    pomodoroIteration = 1
                     focusing = false
                     breaking = true
+                    
+                    // Reset pomodoro iteration for next long break
+                    shortBreakRounds = 0
                 }  else if (breaking) {
-                    print("break to focus")
+                    // Reset countdown timer for focus
                     timeInSeconds = Int(focusTime * 60)
+                    
+                    // Transition state to resemble focus
                     noisePlayer.resumeSound()
                     focusing = true
                     breaking = false
+                    
+                    // Add to current total rounds tally
+                    pomodoroRounds += 1
                 } else {
                     // In case of a weird state
+                    stopTimer()
+                }
+                
+                if (
+                    isLimited
+                    && (pomodoroRounds >= Int(desiredPomodoroRounds))
+                ) {
                     stopTimer()
                 }
             }
             timeInSeconds -= 1
         })
+        
+        // Transition state to resemble focus
         noisePlayer.playSound(noise: selectedNoise.id)
         focusing = true
         breaking = false
@@ -131,10 +180,16 @@ struct ContentView: View {
     
     func stopTimer() -> Void {
         timer?.invalidate()
+        
+        // Transition state to resemble no timing
         noisePlayer.stopSound()
         focusing = false
         breaking = false
         started = false
+        shortBreakRounds = 0
+        
+        // Reset total rounds counter for next time
+        pomodoroRounds = 0
     }
 }
 

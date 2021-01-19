@@ -25,8 +25,6 @@ var player: AVAudioPlayer?
 
 class NoisePlayer {
     func playSound( noise: String ) {
-        print("noise")
-        print(noise)
         guard let url = Bundle.main.url(forResource: noise, withExtension: "mp3") else { return }        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
