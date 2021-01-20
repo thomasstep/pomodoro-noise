@@ -7,19 +7,28 @@
 
 import SwiftUI
 import AVFoundation
+import Combine
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() -> Void {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
 
 struct ContentView: View {
     @State private var noisePlayer = NoisePlayer()
     @State private var selectedNoise = NoiseTypes.brown
     
     // Amount of time to focus (in minutes)
-    @State private var focusTime : Double = 25
+    @State private var focusTime : String = "25"
     
     // Amount of time to break (in minutes)
-    @State private var breakTime : Double = 5
+    @State private var breakTime : String = "5"
     
     // Amount of time to break every 4 rounds (in minutes)
-    @State private var longBreakTime : Double = 20
+    @State private var longBreakTime : String = "20"
     
     // Amount of short break rounds
     // Used to determine when to have a long break
@@ -36,7 +45,7 @@ struct ContentView: View {
     
     // This is to hold the amount of rounds desired by user
     // Similar to a sleep timer
-    @State private var desiredPomodoroRounds : Double = 4
+    @State private var desiredPomodoroRounds : String = "4"
     
     // This is to count pomodoro rounds until it reaches desiredPomodoroRounds
     @State private var pomodoroRounds : Int = 0
@@ -84,20 +93,77 @@ struct ContentView: View {
                     }
 
                     Group {
-                        Slider(value: $focusTime, in: 1...60, step: 1)
-                        Text("\(focusTime, specifier: "%.0f") minutes on")
+                        Text("Focus time (minutes)")
+                        TextField("Default: 25", text: $focusTime)
+                            .multilineTextAlignment(.center)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(focusTime)) { newValue in
+                                let filtered = newValue.filter { "0123456789".contains($0)
+                                }
+                                let numberValue = Int(filtered) ?? 25
+                                if numberValue < 1 {
+                                    self.focusTime = "1"
+                                }
+                                
+                                if numberValue > 60 {
+                                    self.focusTime = "60"
+                                }
+                                
+                                if filtered != newValue {
+                                    self.focusTime = filtered
+                                }
+                            }
                         Divider()
                     }
 
                     Group {
-                        Slider(value: $breakTime, in: 1...60, step: 1)
-                        Text("\(breakTime, specifier: "%.0f") minutes off")
+                        Text("Normal break time (minutes)")
+                        TextField("Default: 25", text: $breakTime)
+                            .multilineTextAlignment(.center)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(breakTime)) { newValue in
+                                let filtered = newValue.filter { "0123456789".contains($0)
+                                }
+                                let numberValue = Int(filtered) ?? 5
+                                if numberValue < 1 {
+                                    self.breakTime = "1"
+                                }
+                                
+                                if numberValue > 60 {
+                                    self.breakTime = "60"
+                                }
+                                
+                                if filtered != newValue {
+                                    self.breakTime = filtered
+                                }
+                            }
                         Divider()
                     }
                     
                     Group {
-                        Slider(value: $longBreakTime, in: 1...60, step: 1)
-                        Text("\(longBreakTime, specifier: "%.0f") minutes off every four rounds")
+                        Text("Long break time (minutes)")
+                        TextField("Default: 25", text: $longBreakTime)
+                            .multilineTextAlignment(.center)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(longBreakTime)) { newValue in
+                                let filtered = newValue.filter { "0123456789".contains($0)
+                                }
+                                let numberValue = Int(filtered) ?? 20
+                                if numberValue < 1 {
+                                    self.longBreakTime = "1"
+                                }
+                                
+                                if numberValue > 60 {
+                                    self.longBreakTime = "60"
+                                }
+                                
+                                if filtered != newValue {
+                                    self.longBreakTime = filtered
+                                }
+                            }
                         Divider()
                     }
                     
@@ -108,8 +174,27 @@ struct ContentView: View {
                         .toggleStyle(SwitchToggleStyle(tint: Color.blue))
                         
                         if (isLimited) {
-                            Slider(value: $desiredPomodoroRounds, in: 1...10, step: 1)
-                            Text("\(desiredPomodoroRounds, specifier: "%.0f") rounds")
+                            Text("Desired Pomodoro rounds")
+                            TextField("Default: 25", text: $desiredPomodoroRounds)
+                                .multilineTextAlignment(.center)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .onReceive(Just(desiredPomodoroRounds)) { newValue in
+                                    let filtered = newValue.filter { "0123456789".contains($0)
+                                    }
+                                    let numberValue = Int(filtered) ?? 4
+                                    if numberValue < 1 {
+                                        self.desiredPomodoroRounds = "1"
+                                    }
+                                    
+                                    if numberValue > 60 {
+                                        self.desiredPomodoroRounds = "20"
+                                    }
+                                    
+                                    if filtered != newValue {
+                                        self.desiredPomodoroRounds = filtered
+                                    }
+                                }
                         }
                     }
                     
@@ -120,17 +205,18 @@ struct ContentView: View {
                         .padding()
                 }
             }
+            .onTapGesture(count: 1, perform: self.hideKeyboard)
         }
     }
 
     func startTimer() -> Void {
-        timeInSeconds = Int(focusTime * 60)
+        timeInSeconds = 60 * (Int(focusTime) ?? 25)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {
             timerInBlock in
             if (timeInSeconds <= 0) {
                 if (focusing && shortBreakRounds < 3) {
                     // Reset countdown timer for short break
-                    timeInSeconds = Int(breakTime * 60)
+                    timeInSeconds = 60 * (Int(breakTime) ?? 5)
                     
                     // Transition state to resemble break
                     noisePlayer.pauseSound()
@@ -141,7 +227,7 @@ struct ContentView: View {
                     shortBreakRounds += 1
                 } else if (focusing && shortBreakRounds >= 3) {
                     // Reset countdown timer for long break
-                    timeInSeconds = Int(longBreakTime * 60)
+                    timeInSeconds = 60 * (Int(longBreakTime) ?? 20)
                     
                     // Transition state to resemble break
                     noisePlayer.pauseSound()
@@ -152,7 +238,7 @@ struct ContentView: View {
                     shortBreakRounds = 0
                 }  else if (breaking) {
                     // Reset countdown timer for focus
-                    timeInSeconds = Int(focusTime * 60)
+                    timeInSeconds = 60 * (Int(focusTime) ?? 25)
                     
                     // Transition state to resemble focus
                     noisePlayer.resumeSound()
@@ -168,7 +254,7 @@ struct ContentView: View {
                 
                 if (
                     isLimited
-                    && (pomodoroRounds >= Int(desiredPomodoroRounds))
+                    && (pomodoroRounds >= (Int(desiredPomodoroRounds) ?? 4))
                 ) {
                     stopTimer()
                 }
