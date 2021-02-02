@@ -94,7 +94,7 @@ struct ContentView: View {
 
                     Group {
                         Text("Focus time (minutes)")
-                        TextField("Default: 25", text: $focusTime)
+                        TextField("Default: 25 minutes", text: $focusTime)
                             .multilineTextAlignment(.center)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .keyboardType(.numberPad)
@@ -119,7 +119,7 @@ struct ContentView: View {
 
                     Group {
                         Text("Normal break time (minutes)")
-                        TextField("Default: 25", text: $breakTime)
+                        TextField("Default: 5 minutes", text: $breakTime)
                             .multilineTextAlignment(.center)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .keyboardType(.numberPad)
@@ -144,7 +144,7 @@ struct ContentView: View {
                     
                     Group {
                         Text("Long break time (minutes)")
-                        TextField("Default: 25", text: $longBreakTime)
+                        TextField("Default: 20 minutes", text: $longBreakTime)
                             .multilineTextAlignment(.center)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .keyboardType(.numberPad)
@@ -174,8 +174,7 @@ struct ContentView: View {
                         .toggleStyle(SwitchToggleStyle(tint: Color.blue))
                         
                         if (isLimited) {
-                            Text("Desired Pomodoro rounds")
-                            TextField("Default: 25", text: $desiredPomodoroRounds)
+                            TextField("Default: 4 rounds", text: $desiredPomodoroRounds)
                                 .multilineTextAlignment(.center)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .keyboardType(.numberPad)
